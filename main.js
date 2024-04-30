@@ -1,10 +1,9 @@
 let result = 0;
+let operator = "";
 
 const resultEl = document.querySelector(".result");
 
 resultEl.innerHTML = result;
-
-// 13글자가 넘어가지면 입력이 안되게
 
 function onClickNumber(number) {
   if (resultEl.innerHTML.length >= 13) return;
@@ -14,4 +13,12 @@ function onClickNumber(number) {
   } else {
     resultEl.innerHTML += number;
   }
+}
+
+function onClickOperator(inputOperator) {
+  result = +resultEl.innerHTML;
+
+  resultEl.innerHTML = 0;
+
+  operator = inputOperator;
 }
