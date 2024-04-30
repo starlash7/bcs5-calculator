@@ -22,3 +22,26 @@ function onClickOperator(inputOperator) {
 
   operator = inputOperator;
 }
+
+function onClickEnter() {
+  switch (operator) {
+    case "+":
+      result += +resultEl.innerHTML;
+      resultEl.innerHTML = result;
+      break;
+    case "-":
+      result -= +resultEl.innerHTML;
+      resultEl.innerHTML = result;
+      break;
+    case "*":
+      result *= +resultEl.innerHTML;
+      resultEl.innerHTML = result;
+      break;
+    case "/":
+      result = parseInt(result / +resultEl.innerHTML, 10);
+      resultEl.innerHTML = result;
+      break;
+    default:
+      console.log("잘못된 연산자입니다.");
+  }
+}
